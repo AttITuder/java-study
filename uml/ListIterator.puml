@@ -1,0 +1,11 @@
+@startuml
+
+interface ListIterator{
+    boolean hasNext();
+    E next();
+    hasPrevious();
+    E previous();
+    void add(E e);
+}
+
+@enduml

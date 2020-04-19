@@ -1,0 +1,52 @@
+@startuml
+
+interface Map<K,V>
+interface Cloneable
+abstract class Dictionary<K,V>
+interface Serializable
+
+Map <|.. AbstractMap
+abstract class AbstractMap<K,V>
+
+AbstractMap <|-- WeakHashMap
+Map <|.. WeakHashMap
+class WeakHashMap<K,V>
+
+Dictionary <|-- Hashtable
+Map <|.. Hashtable
+Cloneable <|.. Hashtable
+Serializable <|.. Hashtable
+class Hashtable<K,V>
+
+AbstractMap <|-- IdentityHashMap
+Map <|.. IdentityHashMap
+Serializable <|.. IdentityHashMap
+Cloneable <|.. IdentityHashMap
+class IdentityHashMap<K,V>
+
+Map <|-- SortedMap
+interface SortedMap<K,V>
+
+Map <|-- ConcurrentMap
+interface ConcurrentMap<K, V>
+
+AbstractMap <|-- HashMap
+Map <|.. HashMap
+Cloneable <|.. HashMap
+Serializable <|.. HashMap
+class HashMap<K,V>
+
+HashMap<|-- LinkedHashMap
+Map<|.. LinkedHashMap
+class LinkedHashMap<K,V>
+
+AbstractMap <|-- TreeMap
+NavigableMap <|.. TreeMap
+Cloneable <|.. TreeMap
+Serializable <|.. TreeMap
+class TreeMap<K,V>
+
+SortedMap <|-- NavigableMap
+interface NavigableMap<K,V>
+
+@enduml

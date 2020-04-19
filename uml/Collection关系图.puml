@@ -1,0 +1,89 @@
+@startuml
+
+title Java 集合框架
+
+interface Iterator<E>
+interface Iterable<T>
+interface Cloneable
+interface Serializable
+
+Iterable <|-- Collection
+interface Collection<E>
+
+Iterator   <|-- ListIterator
+interface ListIterator<E>
+
+Collection <|-- List
+interface List<E>
+
+Collection <|-- Set
+interface Set<E>
+
+Set <|-- SortedSet
+interface SortedSet<E>
+
+Collection <|-- Queue
+interface Queue<E>
+
+Collection <|-- AbstractCollection
+abstract class AbstractCollection<E>
+
+AbstractCollection <|-- AbstractSet
+Set  <|.. AbstractSet
+abstract class AbstractSet<E>
+
+AbstractSet <|-- HashSet
+Set <|.. HashSet
+Cloneable <|.. HashSet
+Serializable <|.. HashSet
+class HashSet<E>
+
+AbstractSet <|--TreeSet
+NavigableSet <|..TreeSet
+Cloneable <|..TreeSet
+Serializable <|..TreeSet
+class TreeSet<E>
+
+HashSet <|-- LinkedHashSet
+Set <|.. LinkedHashSet
+Cloneable <|.. LinkedHashSet
+Serializable <|.. LinkedHashSet
+class LinkedHashSet<E>
+
+AbstractList <|-- ArrayList
+List  <|.. ArrayList
+RandomAccess <|.. ArrayList
+Cloneable <|.. ArrayList
+Serializable <|.. ArrayList
+class ArrayList<E>
+
+AbstractList <|-- AbstractSequentialList
+abstract class AbstractSequentialList<E>
+
+AbstractSequentialList <|-- LinkedList
+List <|.. LinkedList
+Deque <|.. LinkedList
+Cloneable <|.. LinkedList
+Serializable <|.. LinkedList
+class LinkedList<E>
+
+List               <|.. AbstractList
+AbstractCollection <|-- AbstractList
+abstract class AbstractList<E>
+
+AbstractList <|-- Vector
+List <|.. Vector
+RandomAccess <|.. Vector
+Cloneable <|.. Vector
+Serializable <|.. Vector
+class Vector<E>
+
+Vector <|-- Stack
+class Stack<E>
+
+Queue <|-- Deque
+interface Deque<E>
+
+
+
+@enduml
